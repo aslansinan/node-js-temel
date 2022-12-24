@@ -1,14 +1,14 @@
-//1
+//1 temel bekleme operasiyonu
 // setTimeout(() => {
 // console.log("MERHAAB");
 // },5000)
 
-//2
+//2 sürekli çalişabilirlik
 // setInterval(() =>{
 //     console.log("merhaba her saniye çalişiyom");
 // },1000);
 
-//3
+//3 kod yapısı
 // const sayHi = (cb) =>{
 //     cb();
 // }
@@ -16,7 +16,7 @@
 //      console.log("Hello")
 // })
 
-//4
+//4 import fetch and  fetch some data expmle
 import fetch  from "node-fetch";
 // fetch("https://jsonplaceholder.typicode.com/users")
 // .then((data) => data.json())
@@ -31,7 +31,7 @@ import fetch  from "node-fetch";
 //     .then((data) => console.log("post 2 üklendi",data));
 // });
 
-//5
+//5 Adding async and await methods and learn how it is works
 
 // async function getData(){
 //     const users = await (await fetch("https://jsonplaceholder.typicode.com/users")).json();
@@ -45,7 +45,7 @@ import fetch  from "node-fetch";
 //     console.log("post2", post2);
 // }
 // getData()
-
+//6 
 (async () => {
     const users = await (await fetch("https://jsonplaceholder.typicode.com/users")).json();
 
