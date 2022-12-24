@@ -48,14 +48,49 @@ import axios  from "axios";
 // getData()
 //6 if you dont wanna write function two times u can use down methodS
 // using axios
-(async () => {
-    const {data: users} = await axios("https://jsonplaceholder.typicode.com/users");
+// (async () => {
+//     const {data: users} = await axios("https://jsonplaceholder.typicode.com/users");
 
-    const {data: post1} = await axios("https://jsonplaceholder.typicode.com/posts/1");
+//     const {data: post1} = await axios("https://jsonplaceholder.typicode.com/posts/1");
 
-    const {data: post2} = await axios("https://jsonplaceholder.typicode.com/posts/2");
+//     const {data: post2} = await axios("https://jsonplaceholder.typicode.com/posts/2");
 
-    console.log("users", users);
-    console.log("post1", post1);
-    console.log("post2", post2);
-})();
+//     console.log("users", users);
+//     console.log("post1", post1);
+//     console.log("post2", post2);
+// })();
+
+const getUsers = (number) => {
+    return new Promise(async (resolve,reject)  => {
+         if (number === 1) {
+            const {data} = await axios("https://jsonplaceholder.typicode.com/users");
+            resolve(data)
+         }
+        reject("Bir hata var")
+        
+    })
+}
+
+const getPost = (post_id) => {
+    return new Promise(async (resolve,reject)  => {
+         if (post_id === 1) {
+            const {data} = await axios("https://jsonplaceholder.typicode.com/posts/" + post_id);
+            resolve(data)
+         }
+        reject("Bir hata var")
+        
+    })
+}
+
+// (async () => {
+//     try{
+//         const users =  await getUsers(3);
+//         const post =  await getPost(1);
+         
+//         console.log(users);
+//         console.log(post);
+//     }catch(e){
+//         console.log(e);
+//     }
+// })()
+Promise.all([getUsers(3),getPost(1)]).then(console.log).catch(console.log);
