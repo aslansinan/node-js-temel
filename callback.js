@@ -45,7 +45,7 @@ import fetch  from "node-fetch";
 //     console.log("post2", post2);
 // }
 // getData()
-//6 
+//6 if you dont wanna write function two times u can use down methodS
 (async () => {
     const users = await (await fetch("https://jsonplaceholder.typicode.com/users")).json();
 
