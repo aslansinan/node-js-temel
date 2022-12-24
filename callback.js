@@ -18,6 +18,7 @@
 
 //4 import fetch and  fetch some data expmle
 import fetch  from "node-fetch";
+import axios  from "axios";
 // fetch("https://jsonplaceholder.typicode.com/users")
 // .then((data) => data.json())
 // .then((users) => {
@@ -46,12 +47,13 @@ import fetch  from "node-fetch";
 // }
 // getData()
 //6 if you dont wanna write function two times u can use down methodS
+// using axios
 (async () => {
-    const users = await (await fetch("https://jsonplaceholder.typicode.com/users")).json();
+    const {data: users} = await axios("https://jsonplaceholder.typicode.com/users");
 
-    const post1 = await (await fetch("https://jsonplaceholder.typicode.com/posts/1")).json();
+    const {data: post1} = await axios("https://jsonplaceholder.typicode.com/posts/1");
 
-    const post2 = await (await fetch("https://jsonplaceholder.typicode.com/posts/2")).json();
+    const {data: post2} = await axios("https://jsonplaceholder.typicode.com/posts/2");
 
     console.log("users", users);
     console.log("post1", post1);
